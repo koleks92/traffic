@@ -58,9 +58,15 @@ def load_data(data_dir):
     be a list of integer labels, representing the categories for each of the
     corresponding `images`.
     """
-    raise NotImplementedError
+    # Get all the folders inside data_dir
+    folders = os.listdir(data_dir)
 
-
+    # Iterate through the folder to get all the files 
+    for folder in folders:
+        path = os.path.join(data_dir, folder)
+        files = os.listdir(path)
+        for file in files:
+            print(file)
 def get_model():
     """
     Returns a compiled convolutional neural network model. Assume that the
